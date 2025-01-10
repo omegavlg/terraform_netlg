@@ -82,6 +82,8 @@ name  = "example_${random_password.random_string_FAKE.resulT}"
 ```
 name  = "example_${random_password.random_string.result}"
 ```
+Проверяем в очередной раз на наличие ошибок. Ошибок нет.
+<img src = "img/07.png" width = 100%>
 Теперь исправленный файл main.tf выглядит так:
 ```
 terraform {
