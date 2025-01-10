@@ -32,6 +32,13 @@ personal.auto.tfvars
 ```
 Допустимо сохранить личную, секретную информацию в файле personal.auto.tfvars
 
-
-
+Выполняем иницализацию проекта, создаем план и применяем изменения командами:
+```
+terraform init
+terraform plan
+terraform apply
+```
 <img src = "img/01.png" width = 100%>
+<img src = "img/02.png" width = 100%>
+<img src = "img/03.png" width = 100%>
+
