@@ -47,3 +47,28 @@ terraform apply
 "result": "6uJbptLYbNv5cQIj"
 ```
 <img src = "img/04.png" width = 100%>
+
+Раскометруем блок, указанный в задании, и выполняем команду:
+```
+terraform validate
+```
+Получаем следующие ошибки:
+<img src = "img/05.png" width = 100%>
+
+Текст ошибкки говорит о том, что
+1. Отсутствует имя для ресурса docker_image.
+```
+resource "docker_image" {}
+```
+Правильное значение должно быть например такое:
+```
+resource "docker_image" "nginx" {}
+```
+1. Неверное имя ресурса docker_container.
+```
+resource "docker_container" "1nginx" {}
+```
+Имена ресурсов не могут начинаться с цифры. Переименовываем:
+```
+resource "docker_container" "nginx_container" {}
+```
