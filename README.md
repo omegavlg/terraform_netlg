@@ -42,3 +42,8 @@ terraform apply
 <img src = "img/02.png" width = 100%>
 <img src = "img/03.png" width = 100%>
 
+В state-файле секретное содержимое созданного ресурса random_password имеет следующее значение:
+```
+"result": "6uJbptLYbNv5cQIj"
+```
+<img src = "img/04.png" width = 100%>
