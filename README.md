@@ -64,7 +64,7 @@ resource "docker_image" {}
 ```
 resource "docker_image" "nginx" {}
 ```
-1. Неверное имя ресурса docker_container.
+2. Неверное имя ресурса docker_container.
 ```
 resource "docker_container" "1nginx" {}
 ```
@@ -72,3 +72,5 @@ resource "docker_container" "1nginx" {}
 ```
 resource "docker_container" "nginx_container" {}
 ```
+После исправления ошибок и повторном запуске команды получаем еще одну ошибку:
+<img src = "img/06.png" width = 100%>
