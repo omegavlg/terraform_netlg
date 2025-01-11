@@ -124,3 +124,10 @@ resource "docker_container" "nginx_container" {
   }
 }
 ```
+Снова выполняем:
+```
+terraform plan
+terraform apply
+```
+<img src = "img/08.png" width = 100%>
+<img src = "img/09.png" width = 100%>
