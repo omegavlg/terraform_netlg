@@ -56,7 +56,7 @@ terraform validate
 Получаем следующие ошибки:
 <img src = "img/05.png" width = 100%>
 
-Текст ошибкки говорит о том, что
+Текст ошибки говорит о том, что
 1. Отсутствует имя для ресурса docker_image.
 ```
 resource "docker_image" {}
@@ -75,7 +75,8 @@ resource "docker_container" "nginx_container" {}
 ```
 После исправления ошибок и повторном запуске команды получаем еще одну ошибку:
 <img src = "img/06.png" width = 100%>
-Ошибка говорит о том что неверная ссылка на атрибут ресурса. Код пытается сослаться на несуществующий ресурс random_password.random_string_FAKE.
+
+Ошибка говорит о том, что ссылка на атрибут ресурса неверная. Код пытается сослаться на несуществующий ресурс random_password.random_string_FAKE.
 ```
 name  = "example_${random_password.random_string_FAKE.resulT}"
 ```
@@ -85,7 +86,8 @@ name  = "example_${random_password.random_string.result}"
 ```
 Проверяем в очередной раз на наличие ошибок. Ошибок нет.
 <img src = "img/07.png" width = 100%>
-Теперь исправленный файл main.tf выглядит так:
+
+Теперь исправленный файл **main.tf** выглядит так:
 ```
 terraform {
   required_providers {
@@ -138,7 +140,8 @@ terraform apply
 docker ps
 ```
 <img src = "img/10.png" width = 100%>
-Видим, что контейнер с именем **example_6uJbptLYbNv5cQIj** успешно запустился.
+
+Видим, что контейнер с именем example_6uJbptLYbNv5cQIj успешно запустился.
 
 Изменяем имя контейнера на **hello_world** в блоке:
 ```
@@ -157,6 +160,7 @@ resource "docker_container" "nginx_container" {
 terraform apply -auto-approve
 ```
 <img src = "img/11.png" width = 100%>
+
 Выпролняем команду:
 ```
 docker ps
@@ -174,6 +178,7 @@ docker ps
 terraform destroy
 ```
 <img src = "img/13.png" width = 100%>
+
 Содержимое файла **terraform.tfstate**
 ```
 {
@@ -186,7 +191,9 @@ terraform destroy
   "check_results": null
 }
 ```
+
 Docker-образ nginx:latest не был удален, потому что в коде установлен параметр **keep_locally = true**, который указывает Terraform сохранять локально загруженный Docker-образ даже после удаления связанного ресурса.
 
 О чем говорится в документации:
+
 <img src = "img/14.png" width = 100%>
